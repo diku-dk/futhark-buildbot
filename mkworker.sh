@@ -31,6 +31,9 @@ source bin/activate
 
 easy_install "buildbot-worker==0.9.3"
 
+pip install numpy
+pip install pyopencl
+
 rm -rf "$worker"
 
 buildbot-worker create-worker "$worker" "$master" "$worker" "$password"
