@@ -21,6 +21,7 @@ password=$2
 set -e # Die on error
 set -x # Show commands as they are executed
 
+cp worker-data/* /futhark-bb
 cd /
 
 virtualenv-2.7 --no-site-packages futhark-bb
