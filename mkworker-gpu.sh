@@ -8,5 +8,6 @@ export LIBRARY_PATH=/usr/local/cuda/lib64
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64/
 export CPATH=/usr/local/cuda/include:
 export PATH=/usr/local/cuda/bin:/usr/sbin:/sbin:/usr/games:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+export HOME=/futhark-bb
 
 ./mkworker.sh "$@"
