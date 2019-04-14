@@ -24,13 +24,13 @@ set -x # Show commands as they are executed
 cp worker-data/* /futhark-bb
 cd /
 
-virtualenv-2.7 --no-site-packages futhark-bb
+virtualenv-3.6 --no-site-packages futhark-bb
 
 cd futhark-bb
 
 source bin/activate
 
-easy_install "buildbot-worker==0.9.3"
+easy_install "buildbot-worker==2.2.0"
 
 pip install numpy
 pip install pyopencl
