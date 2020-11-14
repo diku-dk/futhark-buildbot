@@ -21,7 +21,7 @@ password=$2
 set -e # Die on error
 set -x # Show commands as they are executed
 
-ulimit -u 1000000 # We may need tons of threads!
+ulimit -u 100000 # We may need tons of threads!
 
 cp worker-data/* /futhark-bb
 cd /
