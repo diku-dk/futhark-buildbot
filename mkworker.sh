@@ -32,7 +32,7 @@ cd futhark-bb
 
 source bin/activate
 
-easy_install "buildbot-worker==2.2.0"
+pip install "buildbot-worker==2.2.0"
 
 pip install numpy
 pip install pyopencl
