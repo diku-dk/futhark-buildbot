@@ -36,6 +36,7 @@ pip install "buildbot-worker==2.2.0"
 
 pip install numpy
 pip install pyopencl
+pip install jsonschema
 
 rm -rf "$worker"
 
