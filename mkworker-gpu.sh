@@ -4,10 +4,13 @@
 # their home directories after a while.  Try to set up an environment
 # that will work for them.
 
-export LIBRARY_PATH=/usr/local/cuda/lib64
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64/
-export CPATH=/usr/local/cuda/include:
-export PATH=/usr/local/cuda/bin:/usr/sbin:/sbin:/usr/games:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+CUDA_PATH=/usr/local/cuda
+ROCM_PATH=/opt/rocm
+
+export LIBRARY_PATH=$CUDA_PATH/lib64:$ROCM_PATH/opencl/lib:
+export LD_LIBRARY_PATH=$CUDA_PATH/lib64/:$ROCM_PATH/opencl/lib:
+export CPATH=$CUDA_PATH/include:$ROCM_PATH/opencl/include:
+export PATH=$CUDA_PATH/bin:$ROCM_PATH/bin:/usr/sbin:/sbin:/usr/games:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
 export HOME=/futhark-bb
 
 ./mkworker.sh "$@"

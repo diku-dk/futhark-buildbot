@@ -38,7 +38,7 @@ pip install numpy
 pip install pyopencl
 pip install jsonschema
 
-rm -rf "$worker"
+# rm -rf "$worker"
 
 buildbot-worker create-worker "$worker" "$master" "$worker" "$password"
 
