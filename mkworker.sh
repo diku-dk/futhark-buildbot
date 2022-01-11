@@ -13,7 +13,8 @@ if [ $# -lt 2 ]; then
     exit 1
 fi
 
-master=buildbot.futhark-lang.org
+master=futhark-lang.org
+port=9989
 
 worker=$1
 password=$2
@@ -23,19 +24,15 @@ set -x # Show commands as they are executed
 
 ulimit -u 100000 # We may need tons of threads!
 
-cp worker-data/* /futhark-bb
-cd /
-
-virtualenv-3.6 --no-site-packages futhark-bb
-
-cd futhark-bb
-
-source bin/activate
+virtualenv-3.6 --no-site-packages /futhark-bb
+source /futhark-bb/bin/activate
 
 pip install -r requirements-worker.txt
 
 # rm -rf "$worker"
 
-buildbot-worker create-worker "$worker" "$master" "$worker" "$password"
+cd /futhark-bb
+
+buildbot-worker create-worker "$worker" "$master:$port" "$worker" "$password"
 
 buildbot-worker start "$worker"
