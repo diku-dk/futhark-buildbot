@@ -1,0 +1,4 @@
+buildbot-worker==3.4.0
+numpy
+pyopencl
+jsonschema
